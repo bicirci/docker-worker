@@ -8,7 +8,8 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     apt-utils apt-transport-https bc build-essential ca-certificates \
     ccache cpio curl dialog file gawk gcc-mipsel-linux-gnu git golang-go \
     libncurses-dev locales lzop mc rsync ssh sudo u-boot-tools unzip \
-    vim wget whiptail
+    vim wget whiptail mtd-utils autoconf automake libtool pkg-config \
+    libgcrypt-dev
 
 RUN update-ca-certificates
 

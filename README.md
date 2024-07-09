@@ -1,5 +1,6 @@
 Dockerized Development Environment for Thingino and OpenIPC
 -----------------------------------------------------------
+This branch is used for ingenic A1 develop
 
 Podman/Docker image for developing [Thingino][1] and [OpenIPC][2] firmware
 in a standardized and reproducible environment across different machines.
