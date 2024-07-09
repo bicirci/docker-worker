@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM debian:testing
+FROM registry.cn-beijing.aliyuncs.com/9zyun/debian:testing
 
 # --no-install-recommends
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
