@@ -78,29 +78,12 @@ done
 
 
 # Build a Docker image with selected development environment
-$DOCKER build -t themactep-dev .
+$DOCKER pull registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:a1-latest
+$DOCKER tag registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:a1-latest docker-worker:a1-latest
 
 [ ! -d workspace/downloads ] && mkdir -p workspace/downloads
 
-# Clone firmware source files from repository
-case "$1" in
-	thingino)
-		if [ ! -d workspace/thingino ]; then
-			git clone --recurse-submodules https://github.com/themactep/thingino-firmware.git workspace/thingino
-		fi
-		;;
-	openipc)
-		if [ ! -d workspace/openipc ]; then
-			git clone --recurse-submodules https://github.com/OpenIPC/firmware.git workspace/openipc
-		fi
-		;;
-	*)
-		echo "Please select a firmware to work with."
-		echo "$0 [thingino|openipc]"
-		exit 1
-esac
-
 # Run a container in interactive mode and mount the source files in it
-$DOCKER run --rm -it --mount type=bind,source="$(pwd)/workspace",target=/home/me themactep-dev:latest
+$DOCKER run --rm -it --mount type=bind,source="$(pwd)/workspace",target=/home/me docker-worker:a1-latest
 
 exit 0
