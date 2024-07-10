@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     ccache cpio curl dialog file gawk gcc-mipsel-linux-gnu git golang-go \
     libncurses-dev locales lzop mc rsync ssh sudo u-boot-tools unzip \
     vim wget whiptail mtd-utils autoconf automake libtool pkg-config \
-    libgcrypt-dev
+    libgcrypt-dev jq zlib1g-dev squashfs-tools
 
 RUN update-ca-certificates
 
