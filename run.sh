@@ -78,12 +78,12 @@ done
 
 
 # Build a Docker image with selected development environment
-$DOCKER pull registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:a1-latest
-$DOCKER tag registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:a1-latest docker-worker:a1-latest
+$DOCKER pull registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:rk-latest
+$DOCKER tag registry.cn-beijing.aliyuncs.com/9zyun/docker-worker:rk-latest docker-worker:rk-latest
 
 [ ! -d workspace/downloads ] && mkdir -p workspace/downloads
 
 # Run a container in interactive mode and mount the source files in it
-$DOCKER run --rm -it --mount type=bind,source="$(pwd)/workspace",target=/home/me docker-worker:a1-latest
+$DOCKER run --rm -it --mount type=bind,source="$(pwd)/workspace",target=/home/me docker-worker:rk-latest
 
 exit 0
