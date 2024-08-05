@@ -9,7 +9,7 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     ccache cpio curl dialog file gawk gcc-mipsel-linux-gnu git golang-go \
     libncurses-dev locales lzop mc rsync ssh sudo u-boot-tools unzip \
     vim wget whiptail mtd-utils autoconf automake libtool pkg-config \
-    libgcrypt-dev jq zlib1g-dev squashfs-tools repo make libssl-dev liblz4-tool \
+    libgcrypt-dev jq zlib1g-dev squashfs-tools make libssl-dev \
     expect g++ patchelf texinfo chrpath diffstat binfmt-support qemu-user-static \
     live-build bison flex fakeroot cmake gcc-multilib g++-multilib device-tree-compiler ncurses-dev
 
