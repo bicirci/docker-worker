@@ -6,7 +6,7 @@ FROM registry.cn-beijing.aliyuncs.com/9zyun/debian:testing
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
     apt-utils apt-transport-https bc build-essential ca-certificates \
-    ccache cpio curl dialog file gawk gcc-mipsel-linux-gnu git golang-go \
+    ccache cpio curl dialog file gawk git golang-go \
     libncurses-dev locales lzop mc rsync ssh sudo u-boot-tools unzip \
     vim wget whiptail mtd-utils autoconf automake libtool pkg-config \
     libgcrypt-dev jq zlib1g-dev squashfs-tools make libssl-dev \
