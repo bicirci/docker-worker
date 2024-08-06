@@ -68,7 +68,7 @@ RUN set -x && \
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
     build-essential crossbuild-essential-arm64 bash-completion\
-	repo git ssh vim sudo locales time rsync bc 7zip ca-certificates\
+	repo git ssh vim sudo locales time rsync bc p7zip-full p7zip-rar ca-certificates\
     python python-pip python-pyelftools
 
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
