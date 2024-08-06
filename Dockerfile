@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM registry.cn-beijing.aliyuncs.com/9zyun/debian:testing
+FROM registry.cn-beijing.aliyuncs.com/9zyun/ubuntu:18.04
 
 LABEL maintainer="Anaconda, Inc"
 
@@ -67,15 +67,16 @@ RUN set -x && \
 # --no-install-recommends
 RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get update && \
     DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
-    apt-utils apt-transport-https bc build-essential ca-certificates \
-    ccache cpio curl dialog file gawk git golang-go \
-    libncurses-dev locales lzop mc rsync ssh sudo u-boot-tools unzip \
-    vim wget whiptail mtd-utils autoconf automake libtool pkg-config \
-    libgcrypt-dev jq zlib1g-dev squashfs-tools make libssl-dev \
-    expect g++ patchelf texinfo chrpath diffstat binfmt-support qemu-user-static \
-    live-build bison flex fakeroot cmake gcc-multilib g++-multilib device-tree-compiler ncurses-dev
+    build-essential crossbuild-essential-arm64 bash-completion\
+	repo git ssh vim sudo locales time rsync bc 7zip ca-certificates\
+    python python-pip python-pyelftools
 
-RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y 7zip
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y \
+    libssl-dev liblz4-tool lib32stdc++6 unzip device-tree-compiler ncurses-dev \
+	expect patchelf chrpath gawk texinfo diffstat binfmt-support \
+	qemu-user-static live-build bison flex fakeroot cmake \
+	subversion asciidoc w3m dblatex graphviz python-matplotlib cpio \
+	libparse-yapp-perl default-jre patchutils swig expect-dev u-boot-tools
 
 RUN update-ca-certificates
 
